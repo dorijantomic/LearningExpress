@@ -1,0 +1,34 @@
+# Node.js & Express
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Debugging
+.vscode
+.idea
+
+# Dependency directories
+.jenkins
+node_modules/
+
+# Distribution files
+dist/
+*.tgz
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
