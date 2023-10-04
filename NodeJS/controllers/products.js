@@ -1,5 +1,15 @@
 const Product = require('../models/product');
 
+
+exports.getHomepage = (req, res, next) => {
+    res.render('shop/index', {
+        pageTitle: 'Shop',
+        path: '/',
+        activeShop: true,
+        productCSS: true
+    });
+};
+
 exports.getAddProduct = (req, res, next) => {
     res.render('admin/add-product', {
         pageTitle: 'Add Product',
@@ -22,6 +32,20 @@ exports.getProducts = (req, res, next) => {
             prods: products,
             pageTitle: 'Products',
             path: '/products',
+            hasProducts: products.length > 0,
+            activeShop: true,
+            productCSS: true
+        });
+    });
+};
+
+
+exports.getAdminProducts = (req, res, next) => {
+    Product.fetchAll(products => {
+        res.render('admin/products', {
+            prods: products,
+            pageTitle: 'Admin Products',
+            path: '/admin/products',
             hasProducts: products.length > 0,
             activeShop: true,
             productCSS: true
