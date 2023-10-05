@@ -2,7 +2,8 @@ const Product = require('../models/product');
 
 
 exports.postAddProduct = (req, res, next) => {
-    const product = new Product(req.body.title);
+    const { title, image, description, price } = req.body
+    const product = new Product(title, image, description, price);
     product.save();
     res.redirect('/');
 };
